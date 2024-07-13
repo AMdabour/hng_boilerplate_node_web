@@ -1,8 +1,14 @@
-# Project Name - Database Schema and API Documentation
+# Project Name - Database Schema and API Documentation for HNG Boilerplate NodeJS by team egen
 
-This document outlines the database schema and API endpoints for the **Project Name** project, detailing tables, relationships, and API routes.
+This document outlines the database schema and API endpoints for the **HNG Boilerplate NodeJS** project, detailing tables, relationships, and API endpoints.
 
-# Organization and User Management API
+## link for the documentation of our API on swagger editor
+[link to API design](https://editor.swagger.io/?url=https://gist.githubusercontent.com/AMdabour/43d495f7ef90ddd0bb3be5a1c49805ab/raw/9b7ac7cb8a4ff8b32251012df4bf2b377ff29425/openapi.json)
+
+## link for database design
+[link to db design](https://dbdiagram.io/d/HNG-Boilerplate-NodeJS-DB-design-6692400b9939893daed32e00)
+
+# HNG Boilerplate NodeJS by team egen
 
 This API provides endpoints for managing organizations, users, payments, admin operations, and comments.
 
@@ -36,7 +42,7 @@ POST /auth/login
 #### Logout user
 
 ```
-POST /logout
+POST /auth/logout
 ```
 
 - **Response**: 200 OK
@@ -44,7 +50,7 @@ POST /logout
 #### Forgot password
 
 ```
-POST /forgot-password
+POST /auth/forgot-password
 ```
 
 - **Request Body**:
@@ -54,7 +60,7 @@ POST /forgot-password
 #### Reset password
 
 ```
-POST /reset-password
+POST /auth/reset-password
 ```
 
 - **Request Body**:
@@ -309,6 +315,7 @@ GET /comment/{id}
 ---
 
 ## Database Schema
+![Database Schema](./database_design.png)
 
 ### Tables Overview
 

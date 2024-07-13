@@ -1,3 +1,7 @@
+# Project Name - Database Schema and API Documentation
+
+This document outlines the database schema and API endpoints for the **Project Name** project, detailing tables, relationships, and API routes.
+
 # Organization and User Management API
 
 This API provides endpoints for managing organizations, users, payments, admin operations, and comments.

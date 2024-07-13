@@ -3,7 +3,7 @@
 This document outlines the database schema and API endpoints for the **HNG Boilerplate NodeJS** project, detailing tables, relationships, and API endpoints.
 
 ## link for the documentation of our API on swagger editor
-[link to API design](https://editor.swagger.io/?url=https://gist.githubusercontent.com/AMdabour/43d495f7ef90ddd0bb3be5a1c49805ab/raw/9b7ac7cb8a4ff8b32251012df4bf2b377ff29425/openapi.json)
+[link to API design](https://editor.swagger.io/?url=https://gist.githubusercontent.com/AMdabour/43d495f7ef90ddd0bb3be5a1c49805ab/raw/89a2706bcf2e449cc30d1c792009581d825db20d/openapi.json)
 
 ## link for database design
 [link to db design](https://dbdiagram.io/d/HNG-Boilerplate-NodeJS-DB-design-6692400b9939893daed32e00)

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>HNG Boilerplate NodeJS API design</title>
+    <title>HNG Boilerplate NodeJS API design by team egen</title>
     <style type="text/css">
       body {
       	font-family: Trebuchet MS, sans-serif;
@@ -178,8 +178,8 @@
     </style>
   </head>
   <body>
-  <h1>HNG Boilerplate NodeJS API design</h1>
-    <div class="app-desc">Comprehensive API design for the HNG11 stage three by team_egen</div>
+  <h1>HNG Boilerplate NodeJS API design by team egen</h1>
+    <div class="app-desc">Comprehensive API design for HNG11 stage three backend task</div>
     <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
     <div class="app-desc">Contact Info: <a href="hello@helloreverb.com">hello@helloreverb.com</a></div>
     <div class="app-desc">Version: 1.0.0</div>
@@ -195,11 +195,16 @@
   <div class="method-summary"></div>
   <h4><a href="#Default">Default</a></h4>
   <ul>
+  <li><a href="#adminGet"><code><span class="http-method">get</span> /admin</code></a></li>
+  <li><a href="#adminOrganisationsGet"><code><span class="http-method">get</span> /admin/organisations</code></a></li>
+  <li><a href="#adminUsersGet"><code><span class="http-method">get</span> /admin/users</code></a></li>
   <li><a href="#authForgotPasswordPost"><code><span class="http-method">post</span> /auth/forgot-password</code></a></li>
   <li><a href="#authLoginPost"><code><span class="http-method">post</span> /auth/login</code></a></li>
   <li><a href="#authLogoutPost"><code><span class="http-method">post</span> /auth/logout</code></a></li>
   <li><a href="#authRegisterPost"><code><span class="http-method">post</span> /auth/register</code></a></li>
   <li><a href="#authResetPasswordPost"><code><span class="http-method">post</span> /auth/reset-password</code></a></li>
+  <li><a href="#commentIdGet"><code><span class="http-method">get</span> /comment/{id}</code></a></li>
+  <li><a href="#commentsGet"><code><span class="http-method">get</span> /comments</code></a></li>
   <li><a href="#organizationsGet"><code><span class="http-method">get</span> /organizations</code></a></li>
   <li><a href="#organizationsIdDelete"><code><span class="http-method">delete</span> /organizations/{id}</code></a></li>
   <li><a href="#organizationsIdGet"><code><span class="http-method">get</span> /organizations/{id}</code></a></li>
@@ -209,6 +214,8 @@
   <li><a href="#organizationsIdMembersUserIdDelete"><code><span class="http-method">delete</span> /organizations/{id}/members/{userId}</code></a></li>
   <li><a href="#organizationsIdPut"><code><span class="http-method">put</span> /organizations/{id}</code></a></li>
   <li><a href="#organizationsPost"><code><span class="http-method">post</span> /organizations</code></a></li>
+  <li><a href="#paymentsGet"><code><span class="http-method">get</span> /payments</code></a></li>
+  <li><a href="#paymentsIdGet"><code><span class="http-method">get</span> /payments/{id}</code></a></li>
   <li><a href="#usersGet"><code><span class="http-method">get</span> /users/</code></a></li>
   <li><a href="#usersIdDelete"><code><span class="http-method">delete</span> /users/{id}</code></a></li>
   <li><a href="#usersIdGet"><code><span class="http-method">get</span> /users/{id}</code></a></li>
@@ -220,6 +227,151 @@
   </ul>
 
   <h1><a name="Default">Default</a></h1>
+  <div class="method"><a name="adminGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /admin</code></pre></div>
+    <div class="method-summary">Admin infomation (<span class="nickname">adminGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#inline_response_200_8">inline_response_200_8</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "role" : "admin",
+  "id" : "12345",
+  "email" : "john@example.com",
+  "username" : "john_doe"
+}, {
+  "role" : "admin",
+  "id" : "12345",
+  "email" : "john@example.com",
+  "username" : "john_doe"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Admin information
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="adminOrganisationsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /admin/organisations</code></pre></div>
+    <div class="method-summary">Get all organizations by admin (<span class="nickname">adminOrganisationsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#inline_response_200_4">inline_response_200_4</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "createdAt" : "2023-01-01T00:00:00Z",
+  "name" : "Acme Corporation",
+  "description" : "A company that sells Acme products",
+  "id" : "org123"
+}, {
+  "createdAt" : "2023-01-01T00:00:00Z",
+  "name" : "Acme Corporation",
+  "description" : "A company that sells Acme products",
+  "id" : "org123"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    A list of organizations by admin
+        
+    <h4 class="field-label">404</h4>
+    No organizations found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="adminUsersGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /admin/users</code></pre></div>
+    <div class="method-summary">List all users by admin (<span class="nickname">adminUsersGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#inline_response_201">inline_response_201</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "id" : "12345",
+  "email" : "john@example.com",
+  "username" : "john_doe"
+}, {
+  "id" : "12345",
+  "email" : "john@example.com",
+  "username" : "john_doe"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    A list of users by admin
+        
+  </div> <!-- method -->
+  <hr/>
   <div class="method"><a name="authForgotPasswordPost"></a>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -456,6 +608,102 @@
     <h4 class="field-label">400</h4>
     Invalid token or password
         <a href="#inline_response_400">inline_response_400</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="commentIdGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /comment/{id}</code></pre></div>
+    <div class="method-summary">Get comment by ID (<span class="nickname">commentIdGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_9">inline_response_200_9</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "createdAt" : "2023-01-01T00:00:00Z",
+  "author" : "i want to be part of this",
+  "id" : "12345"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    comment details
+        <a href="#inline_response_200_9">inline_response_200_9</a>
+    <h4 class="field-label">404</h4>
+    Comment not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="commentsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /comments</code></pre></div>
+    <div class="method-summary">Get all comments (<span class="nickname">commentsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#inline_response_200_9">inline_response_200_9</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "createdAt" : "2023-01-01T00:00:00Z",
+  "author" : "i want to be part of this",
+  "id" : "12345"
+}, {
+  "createdAt" : "2023-01-01T00:00:00Z",
+  "author" : "i want to be part of this",
+  "id" : "12345"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    A list of comments
+        
   </div> <!-- method -->
   <hr/>
   <div class="method"><a name="organizationsGet"></a>
@@ -929,6 +1177,105 @@
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
+  <div class="method"><a name="paymentsGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /payments</code></pre></div>
+    <div class="method-summary">Get all payments (<span class="nickname">paymentsGet</span>)</div>
+    <div class="method-notes"></div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#inline_response_200_6">inline_response_200_6</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "createdAt" : "2023-01-01T00:00:00Z",
+  "id" : "12345",
+  "productName" : "cloth"
+}, {
+  "createdAt" : "2023-01-01T00:00:00Z",
+  "id" : "12345",
+  "productName" : "cloth"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    A list of payments
+        
+    <h4 class="field-label">404</h4>
+    No payments found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="paymentsIdGet"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /payments/{id}</code></pre></div>
+    <div class="method-summary">Get payment by ID (<span class="nickname">paymentsIdGet</span>)</div>
+    <div class="method-notes"></div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200_7">inline_response_200_7</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "createdAt" : "2023-01-01T00:00:00Z",
+  "ProductName" : "cloth",
+  "id" : "12345"
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Payment details
+        <a href="#inline_response_200_7">inline_response_200_7</a>
+    <h4 class="field-label">404</h4>
+    Payment not found
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
   <div class="method"><a name="usersGet"></a>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
@@ -1383,6 +1730,10 @@
     <li><a href="#inline_response_200_3"><code>inline_response_200_3</code></a></li>
     <li><a href="#inline_response_200_4"><code>inline_response_200_4</code></a></li>
     <li><a href="#inline_response_200_5"><code>inline_response_200_5</code></a></li>
+    <li><a href="#inline_response_200_6"><code>inline_response_200_6</code></a></li>
+    <li><a href="#inline_response_200_7"><code>inline_response_200_7</code></a></li>
+    <li><a href="#inline_response_200_8"><code>inline_response_200_8</code></a></li>
+    <li><a href="#inline_response_200_9"><code>inline_response_200_9</code></a></li>
     <li><a href="#inline_response_201"><code>inline_response_201</code></a></li>
     <li><a href="#inline_response_201_1"><code>inline_response_201_1</code></a></li>
     <li><a href="#inline_response_400"><code>inline_response_400</code></a></li>
@@ -1545,6 +1896,56 @@
           <div class="param-desc"><span class="param-type">example: john_doe</span></div>
 <div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
           <div class="param-desc"><span class="param-type">example: john@example.com</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_6"><code>inline_response_200_6</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 12345</span></div>
+<div class="param">productName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: cloth</span></div>
+<div class="param">createdAt (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+          <div class="param-desc"><span class="param-type">example: 2023-01-01T00:00Z</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_7"><code>inline_response_200_7</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 12345</span></div>
+<div class="param">ProductName (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: cloth</span></div>
+<div class="param">createdAt (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+          <div class="param-desc"><span class="param-type">example: 2023-01-01T00:00Z</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_8"><code>inline_response_200_8</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 12345</span></div>
+<div class="param">username (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: john_doe</span></div>
+<div class="param">role (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: admin</span></div>
+<div class="param">email (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: john@example.com</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200_9"><code>inline_response_200_9</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: 12345</span></div>
+<div class="param">author (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  </div>
+          <div class="param-desc"><span class="param-type">example: i want to be part of this</span></div>
+<div class="param">createdAt (optional)</div><div class="param-desc"><span class="param-type"><a href="#DateTime">Date</a></span>  format: date-time</div>
+          <div class="param-desc"><span class="param-type">example: 2023-01-01T00:00Z</span></div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

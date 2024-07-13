@@ -1,9 +1,9 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "User/Organisation Management API",
+    "title": "HNG Boilerplate NodeJS API design by team egen",
     "version": "1.0.0",
-    "description": "Comprehensive API design for the User/Organisation Management System by team_egen for the HNG11 stage three group task"
+    "description": "Comprehensive API design for HNG11 stage three backend task"
   },
   "servers": [
     {
@@ -1180,21 +1180,9 @@
                         "type": "string",
                         "example": 12345
                       },
-                      "user_id": {
+                      "productName": {
                         "type": "string",
-                        "example": 11245
-                      },
-                      "organization_id": {
-                        "type": "string",
-                        "example": 647685
-                      },
-                      "amount": {
-                        "type": "number",
-                        "example": 20000
-                      },
-                      "status": {
-                        "type": "string",
-                        "example": "done"
+                        "example": "cloth"
                       },
                       "createdAt": {
                         "type": "string",
@@ -1239,21 +1227,9 @@
                       "type": "string",
                       "example": 12345
                     },
-                    "user_id": {
+                    "ProductName": {
                       "type": "string",
-                      "example": 11245
-                    },
-                    "organization_id": {
-                      "type": "string",
-                      "example": 647685
-                    },
-                    "amount": {
-                      "type": "number",
-                      "example": 20000
-                    },
-                    "status": {
-                      "type": "string",
-                      "example": "done"
+                      "example": "cloth"
                     },
                     "createdAt": {
                       "type": "string",

@@ -1162,6 +1162,285 @@
           }
         }
       }
+    },
+    "/payments": {
+      "get": {
+        "summary": "Get all payments",
+        "responses": {
+          "200": {
+            "description": "A list of payments",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": 12345
+                      },
+                      "productName": {
+                        "type": "string",
+                        "example": "cloth"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2023-01-01T00:00:00Z"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No payments found"
+          }
+        }
+      }
+    },
+    "/payments/{id}": {
+      "get": {
+        "summary": "Get payment by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": 12345
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Payment details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": 12345
+                    },
+                    "ProductName": {
+                      "type": "string",
+                      "example": "cloth"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2023-01-01T00:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Payment not found"
+          }
+        }
+      }
+    },
+    "/admin": {
+      "get": {
+        "summary": "Admin infomation",
+        "responses": {
+          "200": {
+            "description": "Admin information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "12345"
+                      },
+                      "username": {
+                        "type": "string",
+                        "example": "john_doe"
+                      },
+                      "role": {
+                        "type": "string",
+                        "example": "admin"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "john@example.com"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/users": {
+      "get": {
+        "summary": "List all users by admin",
+        "responses": {
+          "200": {
+            "description": "A list of users by admin",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "12345"
+                      },
+                      "username": {
+                        "type": "string",
+                        "example": "john_doe"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "john@example.com"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/organisations": {
+      "get": {
+        "summary": "Get all organizations by admin",
+        "responses": {
+          "200": {
+            "description": "A list of organizations by admin",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "org123"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "Acme Corporation"
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "A company that sells Acme products"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2023-01-01T00:00:00Z"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No organizations found"
+          }
+        }
+      }
+    },
+    "/comments": {
+      "get": {
+        "summary": "Get all comments",
+        "responses": {
+          "200": {
+            "description": "A list of comments",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": 12345
+                      },
+                      "author": {
+                        "type": "string",
+                        "example": "i want to be part of this"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2023-01-01T00:00:00Z"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/comment/{id}": {
+      "get": {
+        "summary": "Get comment by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": 12345
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "comment details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": 12345
+                    },
+                    "author": {
+                      "type": "string",
+                      "example": "i want to be part of this"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2023-01-01T00:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Comment not found"
+          }
+        }
+      }
     }
   }
 }

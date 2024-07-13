@@ -718,10 +718,450 @@
         }
       }
     },
-    "/organizations": {},
-    "/organizations/{id}": {},
-    "/organizations/{id}/members": {},
-    "/organizations/{id}/members/{userId}": {},
-    "/organizations/{id}/invite": {}
+    "/organizations": {
+      "post": {
+        "summary": "Create a new organization",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Acme Corporation"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "A company that sells Acme products"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Organization created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "org123"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Acme Corporation"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "A company that sells Acme products"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2023-01-01T00:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all organizations",
+        "responses": {
+          "200": {
+            "description": "A list of organizations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "org123"
+                      },
+                      "name": {
+                        "type": "string",
+                        "example": "Acme Corporation"
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "A company that sells Acme products"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time",
+                        "example": "2023-01-01T00:00:00Z"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No organizations found"
+          }
+        }
+      }
+    },
+    "/organizations/{id}": {
+      "get": {
+        "summary": "Get organization by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "org123"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Organization details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "org123"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Acme Corporation"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "A company that sells Acme products"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2023-01-01T00:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization not found"
+          }
+        }
+      },
+      "put": {
+        "summary": "Update organization by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "org123"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "example": "Acme Corporation"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "A company that sells Acme products"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Organization updated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "org123"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "Acme Corporation"
+                    },
+                    "description": {
+                      "type": "string",
+                      "example": "A company that sells Acme products"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time",
+                      "example": "2023-01-01T00:00:00Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Organization not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete organization by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "org123"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Organization deleted successfully"
+          },
+          "404": {
+            "description": "Organization not found"
+          }
+        }
+      }
+    },
+    "/organizations/{id}/members": {
+      "get": {
+        "summary": "List all members of the organization",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "org123"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of members",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "user123"
+                      },
+                      "username": {
+                        "type": "string",
+                        "example": "john_doe"
+                      },
+                      "email": {
+                        "type": "string",
+                        "example": "john@example.com"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Organization not found"
+          }
+        }
+      },
+      "post": {
+        "summary": "Add a new member to the organization",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "org123"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "type": "string",
+                    "example": "user123"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Member added successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "user123"
+                    },
+                    "username": {
+                      "type": "string",
+                      "example": "john_doe"
+                    },
+                    "email": {
+                      "type": "string",
+                      "example": "john@example.com"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Organization not found"
+          }
+        }
+      }
+    },
+    "/organizations/{id}/members/{userId}": {
+      "delete": {
+        "summary": "Remove a member from the organization",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "org123"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "user123"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Member removed successfully"
+          },
+          "404": {
+            "description": "Organization or member not found"
+          }
+        }
+      }
+    },
+    "/organizations/{id}/invite": {
+      "post": {
+        "summary": "Invite a new member to the organization",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "org123"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "invitee@example.com"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Invitation sent successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "example": "invitee@example.com"
+                    },
+                    "status": {
+                      "type": "string",
+                      "example": "invited"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Organization not found"
+          }
+        }
+      }
+    }
   }
 }
